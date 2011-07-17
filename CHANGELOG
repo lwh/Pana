@@ -1,0 +1,60 @@
+Pana 1.4.18
+
+	- Redid auto tools build process
+	- QImage error fix
+
+May 16th, 2010
+
+Pana 1.4.17
+
+	- Cleaned up build process
+	- Added new splash screen
+	- Removed old svn scripts that don't work at all with Pana's repository
+	- Moved some Ruby files to a pana14 subdir to avoid conflict with Amarok and Pana1.5
+	- Branched 1.5
+
+May 9, 2010
+
+Pana 1.4.16
+	- Added logo thanks to Christopher Stark http://christopherstark.de/
+	- Renamed helixconfig.kcfg to panahelixconfig.kcfg to avoid conflict with Amarok 1.4
+	- Renamed nmm_kdeconfig.kcfg to pananmm_kdeconfig.kcfg to avoid conflict with Amarok 1.4
+
+February 21, 2010
+
+Pana 1.4.15
+	- Wikipedia fix from here http://ubuntuforums.org/showpost.php?p=8537150
+	- Renamed xinecfg.kcfg to panaxinecfg.kcfg to avoid conflict with Amarok 1.4
+	- Default to --without-arts
+	- Other languages translation files fixed to have Pana name in them and work again. Thanks to Florian Schröck for the script to automate it.
+	
+
+February 6th , 2010
+
+Pana 1.4.14
+
+	- Did a license check on everything. Reverted a few more files with "GPLv3 or later" back to "GPLv2 or later". 
+
+February 4th, 2010
+
+Pana 1.4.13
+	- Fixed up English docs, some more Amarok -> Pana corrections, and the odd Amarok -> Pana ones. (i.e. in (c) or credits)
+	- Made clean target clean translation files.
+	- Fixed a bug in ipod device Makefile that broke compilation. Thanks to Florian Schröck for the report.
+	- Fixed mp4v2 code to build with newer g++
+	- Fixed license - some files don't say "any later" or "or later" so we must default to  GPLv2 #516822
+	- Fixed player id for audioscrobbler so Pana stops showing as Amarok on Last.fm.
+	- Tested more configure options for hardware we don't have ...
+
+January 23rd, 2010
+
+Pana 1.4.11
+	First release, mainly the name change.
+	This is Amarok 1.4.10 with fixes:
+
+	- Last.fm instead of Amazon for covers thanks to Benjamin Johnson <obeythepenguin@users.sourceforge.net>
+	- Wikipedia search is fixed 
+	- Audible bugs fixed thanks to Rafael Laboissiere <rafael@debian.org>
+	- Last.fm player id changed , Pana registered as a player.
+	- MTP compile errors fixed
+

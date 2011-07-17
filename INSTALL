@@ -1,0 +1,18 @@
+Installing Pana
+
+Please see README for more detail on requirements and optional features
+
+In order to compile and install Pana on your system, type the following in the
+base directory of the Pana distribution:
+
+
+   % ./configure --prefix=`kde-config --prefix` --disable-debug --disable-warnings
+	# Assuming that works
+   % make
+   % make install
+
+It's almost certain that you'll want to add features, run:
+
+	% ./configure --help
+
+to see the build options.

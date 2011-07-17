@@ -1,0 +1,62 @@
+Pana - the audio player for people who hate change
+
+Pana is a fork of Amarok 1.4.10 please don't bug Amarok about it!
+If you don't know what Amarok is it's better to use Clementine:
+http://code.google.com/p/clementine-player/
+
+http://pana.bunnies.net/
+irc.freenode.net  #pana
+
+Pana features from Amarok 1.4:
+
+* Quick and simple drag and drop playlist creation
+* Music library (built-in SQLite, MySQL, or PostgreSQL)
+* Multiple backends supported (xine, Helix)
+* Plays many audio formats
+* 10 band equalizer
+* Automatic cover art download using Last.fm services
+* Unique, powerful, and stylable context browser
+* Automatic statistics generation (iRate style)
+* Full lyrics download
+* Learn about your music with integrated Wikipedia
+* Full Last.fm support
+* Visualisations with libvisual
+* Crossfading and gapless playback
+* Fully configurable OSD for track changes
+* K3B (CD-burning) integration
+* Podcast support
+* Access to iPod, iRiver IFP, USB Mass Storage and many other devices
+* Powerful scripting interface
+* Complete DCOP Access
+* KDE integration
+* Preview albums from the Magnatune.com music store
+
+
+Requirements
+
+* KDE-Libs 3.x
+* KDE-Base 3.x
+* TagLib 1.4 or newer
+* Ruby 1.8
+
+One of:
+* xine-lib 1.0.2 or newer ( Preferred )
+* HelixPlayer 1.0 or newer
+
+Optional:
+
+* MySQL 4 or 5
+* PostgreSQL 7.4
+* OpenGL accelerated X-Server
+* Libvisual 0.4.0 + SDL 1.2
+* ProjectM 0.96 (or newer)
+* libtunepimp 0.3 (or newer)
+* K3B 0.11 (or newer)
+* libgpod 0.4.2 (or newer)
+* libifp 1.0.0.2
+* libmp4v2 (mpeg4ip 1.5 is recommended, faad2 is less reliable)
+* libnjb 2.2.4 (older versions may work)
+* libmtp 0.1.1 (or newer)
+* libkarma 0.0.5 && OMFS 0.6.1
+
+

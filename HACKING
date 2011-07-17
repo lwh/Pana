@@ -1,0 +1,198 @@
+Guidelines for Hacking Pana
+
+Patches are very very welcome. As are bug reports on problems with functionality.
+It is our goal to retain all existing functions but as we are not using all the
+options in the program, it makes testing hard. Especially for portable players -
+so if something acts up please tell us. Please run diffs against trunk or make a note
+of which source version you used.
+
+You must agree any patches you send are under GPLv2, or GPLv2 or later - it will depend
+on the source file(s) you have patched. GPLv2+ is preferred in case we ever try to
+switch to a newer version. For the docs folder the content is licensed under GFDL 1.3
+or laterPlease provide your name and the date, and indicate whether you want the file
+(c) you and/or FSF. If you add yourself to the top notices don't modify the other
+notices even if they are written poorly or don't make sense - they may be left that
+way intentionally.
+
+http://pana.bunnies.net/ . pana@bunnies.net accepts comments, bug reports,
+suggestions, patches.
+
+
+Code guidelines:
+
+* Tabs, not spaces.
+* Indentation is 1 tab
+* For pointer and reference variable declarations put a space between the type
+  and the * or & and no space before the variable name.
+* For all language constructs except function and class definitions, put the 
+  { on the same line please. (This is flexible).
+* Functions and class definitions must have their { on the next line.
+* A function implementation's return type is on its own line.
+
+Header includes should be listed in the following order:
+	- Pana includes
+	- KDE includes
+	- Qt includes
+
+They should also be sorted alphabetically, for ease of locating them.  A small comment
+if applicable is also helpful.
+
+Includes in a header file should be kept to the absolute minimum, as to keep compile times
+low. This can be achieved by using "forward declarations" instead of includes, like
+"class QListView;" Forward declarations work for pointers and const references.
+
+
+Comments
+--------
+Comment your code. Explain hacks and workarounds. Explain classes and functions. Provide a description of what a file is for at the beginning please.
+
+
+Header Formatting
+-----------------
+General rules apply here.  Please keep header function definitions aligned nicely,
+if possible.  It helps greatly when looking through the code.  Sorted methods,
+either by name or by their function (ie, group all related methods together) is
+great too.
+
+
+ | #ifndef PANA_QUEUEMANAGER_H
+ | #define PANA_QUEUEMANAGER_H
+ |
+ | class QueueList : public KListView
+ | {
+ |		Q_OBJECT
+ |
+ |		public:
+ |			Queuelist( QWidget *parent, const char *name = 0 );
+ |			~QueueList() {};
+ |
+ |		public slots:
+ |			void    moveSelectedUp();
+ |			void    moveSelectedDown();
+ | };
+ |
+ |#endif /* PANA_QUEUEMANAGER_H */
+
+
+0 vs NULL
+---------
+The use of 0 to express a null pointer is preferred over the use of NULL.
+0 is not a magic value, it's the defined value of the null pointer in C++.
+NULL, on the other hand, is a preprocessor directive (#define) and not only is
+it more typing than '0' but preprocessor directives are less elegant.
+
+ |     SomeClass *instance = 0;
+
+
+Const Correctness
+-----------------
+Try to keep your code const correct. Declare methods const if they don't mutate the object,
+and use const variables. It improves safety, and also makes it easier to understand the code.
+
+See: http://www.parashift.com/c++-faq-lite/const-correctness.html
+
+
+Example:
+
+ | bool 
+ | MyClass::isValidFile( const QString& path ) const
+ | {
+ |     const bool valid = QFile::exist( path );
+ |
+ |     return valid;
+ | }
+
+
+Debugging
+---------
+debug.h contains some handy functions for our debug console output.
+Please use them instead of kdDebug().
+
+Usage:
+
+ | #include "debug.h"
+ |
+ | debug()   << "Something is happening" << endl;
+ | warning() << "Something bad may happen" << endl;
+ | error()   << "Something bad did happen!" << endl;
+
+Additionally, there are some macros for debugging functions:
+
+DEBUG_BLOCK
+DEBUG_FUNC_INFO
+DEBUG_LINE_INFO
+DEBUG_INDENT
+DEBUG_UNINDENT
+
+PANA_NOTIMPLEMENTED
+PANA_DEPRECATED
+
+threadweaver.h has two additional macros:
+DEBUG_THREAD_FUNC_INFO outputs the memory address of the current QThread or 'none'
+    if its the original GUI thread.
+SHOULD_BE_GUI outputs a warning message if it occurs in a thread that isn't in
+    the original "GUI Thread", otherwise it is silent. Useful for documenting
+    functions and to prevent problems in the future.
+
+
+Usage of Pana::config()
+-------------------------
+We provide this method for convenience, but it is important to use it properly. By
+inspection, we can see that we may produce very obscure bugs in the wrong case:
+
+ | KConfig 
+ | *config( const QString &group )
+ | {
+ |    //Slightly more useful config() that allows setting the group simultaneously
+ |    kapp->config()->setGroup( group );
+ |    return kapp->config();
+ | }
+
+Take the following example:
+ 
+ | void
+ | f1()
+ | {
+ |    KConfig *config = Pana::config( "Group 2" );
+ |    config->writeEntry( "Group 2 Variable", true );
+ | }
+ |
+ | void
+ | doStuff()
+ | {
+ |   KConfig *config = Pana::config( "Group 1" );
+ |   f1();
+ |   config->writeEntry( "Group 1 Variable", true );
+ | }
+
+We would expect the following results:
+
+ | [Group 1]
+ | Group 1 Variable = true
+ |
+ | [Group 2]
+ | Group 2 Variable = true
+
+However because the config group is changed before writing the entry:
+ | [Group 1]
+ |
+ | [Group 2]
+ | Group 1 Variable = true
+ | Group 2 Variable = true
+
+Which is clearly incorrect. And hard to see when your wondering why f1() is not
+working. So do not store a value of Pana::config, make it a habit to just 
+always call writeEntry or readEntry directly.
+
+Correct:
+| Pana::config( "Group 1" )->writeEntry( "Group 1 Variable", true );
+
+
+Errors & Asserts
+----------------
+*Never use assert() or fatal(). There must be a better option than crashing a user's
+application (its not uncommon for end-users to have debugging enabled).
+
+*KMessageBox is fine to use to prompt the user, but do not use it to display errors
+or informational messages. Instead, KDE::StatusBar has a few handy methods. Refer to
+pana/src/statusbar/statusBarBase.h
