@@ -1,0 +1,8 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Service
+ServiceTypes=Pana/CodecInstall
+X-KDE-Pana-codec=mp3
+X-KDE-Pana-engine=xine-engine
+Exec=kdialog --msgbox "Hello World"
+

@@ -1,0 +1,8 @@
+# Code generation options for kconfig_compiler
+File=pana.kcfg
+ClassName=PanaConfig
+Singleton=true
+Mutators=true
+MemberVariables=private
+Visibility=LIBPANA_EXPORT
+IncludeFiles=pana_export.h

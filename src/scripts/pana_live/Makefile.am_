@@ -1,0 +1,9 @@
+livedir = $(kde_datadir)/pana/scripts/pana_live
+
+live_SCRIPTS = pana_live.py
+
+live_DATA = README \
+			pana.live.remaster.part1.sh \
+			pana.live.remaster.part2.sh
+
+

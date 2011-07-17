@@ -1,0 +1,15 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=ServiceType
+X-KDE-ServiceType=Pana/CodecInstall
+
+# The unplayable codec
+[PropertyDef::X-KDE-Pana-codec]
+Type=QString
+
+[PropertyDef::X-KDE-Pana-engine]
+Type=QString
+
+# If true, Pana will show a warning dialog about the experimental nature of this plugin.
+[PropertyDef::Exec]
+Type=QString

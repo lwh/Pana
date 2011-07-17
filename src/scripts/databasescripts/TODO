@@ -1,0 +1,11 @@
+** TODO (databasescripts.rb) **
+
+Script Ideas:
+* Script to restore database backup
+* Migration script (move directories)
+* 1.4 -> 2.x converter - the one in 2.x does not work well
+
+General:
+* Properly use the ui file, to make it easier to maintain later
+* Maybe pass error messages back to the parent dialog to abstract scripts away from pana?
+
