@@ -1,0 +1,16 @@
+# @configure_input@
+#
+# # Package-related substitution variables
+package        = @PACKAGE_NAME@
+version        = @PACKAGE_VERSION@
+#
+# # Prefix-related substitution variables
+prefix         = @prefix@
+exec_prefix    = @exec_prefix@
+bindir         = @bindir@
+#
+Makefile: Makefile.in ../config.status
+         cd .. && ./config.status $@
+
+../config.status: ../configure
+cd .. && ./config.status --recheck
