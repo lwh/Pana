@@ -10,6 +10,8 @@ exec_prefix = @exec_prefix@
 bindir = @bindir@
 subdirs = src doc po
 
+pana: all
+
 Makefile: Makefile.in config.status
 	./config.status $@
 
@@ -19,3 +21,7 @@ config.status: configure
 distclean: 
 	rm -rf autom4te.cache config.log config.status configure Makefile autoscan configure.scan config.h
 	# for subdirs make distclean
+
+clean:
+
+all: 
