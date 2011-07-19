@@ -10,7 +10,7 @@
 
 extern "C"
 {
-    #include <sys/types.h>  //this must be _before_ sys/socket on freebsd
+    #include <sys/types.h>
     #include <sys/socket.h>
     #include <sys/un.h>
     #include <unistd.h>

@@ -1,4 +1,5 @@
-/* This file is part of the KDE project
+/* This file is from The KDE project www.kde.org
+ *
    Copyright (C) 2004 Mark Kretschmann <markey@web.de>
    Copyright (C) 2003 Alexander Dymo <cloudtemple@mksat.net>
    Copyright (C) 2003 Roberto Raggi <roberto@kdevelop.org>

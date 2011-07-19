@@ -1,7 +1,7 @@
-// (c) 2005 Christian Muehlhaeuser <chris@chris.de>
-// (c) 2006 Seb Ruiz <me@sebruiz.net>
-// License: GNU General Public License V2
-
+/* (C) 2005 Christian Muehlhaeuser <chris@chris.de>
+ * (C) 2006 Seb Ruiz <me@sebruiz.net>
+ * License: GNU General Public License V2
+*/
 
 #include "pana.h"
 #include "panaconfig.h"

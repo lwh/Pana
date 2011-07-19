@@ -1,7 +1,10 @@
-// (c) 2004 Mark Kretschmann <markey@web.de>
-// (c) 2004 Pierpaolo Di Panfilo <pippo_dp@libero.it>
-// (c) 2005 Alexandre Pereira de Oliveira <aleprj@gmail.com>
-// See COPYING file for licensing information.
+/*
+ * (C) 2004 Mark Kretschmann <markey@web.de>
+ * (C) 2004 Pierpaolo Di Panfilo <pippo_dp@libero.it>
+ * (C) 2005 Alexandre Pereira de Oliveira <aleprj@gmail.com>
+ * (C) 2011 Free Software Foundation, Inc. 
+ * See the file COPYING for license information
+ */
 
 #ifndef PANA_TAGDIALOG_H
 #define PANA_TAGDIALOG_H

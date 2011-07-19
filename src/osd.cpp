@@ -4,12 +4,13 @@
  * the Free Software Foundation; either version 2 of the License, or
  * (at your option) any later version.
  *
- * osd.cpp:   Shows some text in a pretty way independent to the WM
+ * osd.cpp:   Shows on screen display independent of window manager
  * begin:     Fre Sep 26 2003
  * copyright: (C) 2004 Christian Muehlhaeuser <chris@chris.de>
  *            (C) 2004-2006 Seb Ruiz <me@sebruiz.net>
- *            (C) 2004, 2005 Max Howell
+ *            (C) 2004-2005 Max Howell
  *            (C) 2005 Gábor Lehel <illissius@gmail.com>
+ *            (C) 2011 Free Software Foundation, Inc.
  */
 
 #include "pana.h"
@@ -36,9 +37,8 @@
 #include <qtimer.h>
 #include <qvaluevector.h>
 
-namespace ShadowEngine
-{
-    QImage makeShadow( const QPixmap &textPixmap, const QColor &bgColor );
+namespace ShadowEngine {
+	QImage makeShadow( const QPixmap &textPixmap, const QColor &bgColor );
 }
 
 
@@ -184,7 +184,7 @@ OSDWidget::determineMetrics( const uint M )
     // remove consecutive line breaks
     m_text.replace( QRegExp("\n+"), "\n" );
 
-    // The osd cannot be larger than the screen
+    // The OSD cannot be larger than the screen
     QRect rect = fontMetrics().boundingRect( 0, 0,
             max.width() - image.width(), max.height(),
             AlignCenter | WordBreak, m_text );
