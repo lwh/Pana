@@ -1,5 +1,5 @@
 /*
-  Copyright (c) 2006 Gábor Lehel <illissius@gmail.com>
+  Copyright (C) 2006 Gábor Lehel <illissius@gmail.com>
 
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Library General Public
@@ -16,7 +16,6 @@
   the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
   Boston, MA 02110-1301, USA.
 */
-
 
 #include <qapplication.h>
 

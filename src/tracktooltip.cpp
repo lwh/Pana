@@ -3,16 +3,10 @@
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation; either version 2 of the License, or
   (at your option) any later version.
-*/
 
-/*
-  tracktooltip.cpp
   begin:     Tue 10 Feb 2004
-  copyright: (C) 2004 by Christian Muehlhaeuser
-  email:     chris@chris.de
-
-  copyright: (C) 2005 by Gábor Lehel
-  email:     illissius@gmail.com
+  copyright: (C) 2004 by Christian Muehlhaeuser chris@chris.de
+  copyright: (C) 2005 by Gábor Lehel illissius@gmail.com
 */
 
 #include "pana.h"

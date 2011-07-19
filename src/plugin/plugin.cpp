@@ -3,17 +3,13 @@
 
 #include "plugin.h"
 
-
 namespace Pana {
-
 
 Plugin::Plugin()
 {}
 
-
 Plugin::~Plugin()
 {}
-
 
 void
 Plugin::addPluginProperty( const QString& key, const QString& value )

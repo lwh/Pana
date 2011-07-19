@@ -1,12 +1,11 @@
 /*
- *   Copyright (C) 2005 Max Howell <max.howell@methylblue.com>             *
- *                                                                         *
- *   This program is free software; you can redistribute it and/or modify  *
- *   it under the terms of the GNU General Public License as published by  *
- *   the Free Software Foundation; either version 2 of the License, or     *
- *   (at your option) any later version.                                   *
- *                                                                         *
- ***************************************************************************/
+ * Copyright (C) 2005 Max Howell <max.howell@methylblue.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+*/
 
 #include "pana.h"
 #include "panaconfig.h"
@@ -23,12 +22,12 @@
 #include <qtextstream.h>
 #include <qglobal.h> //qVersion()
 
-#include <cstdio>         //popen, fread
+#include <cstdio> //popen, fread
 #include <iostream>
-#include <sys/types.h>    //pid_t
-#include <sys/wait.h>     //waitpid
+#include <sys/types.h> //pid_t
+#include <sys/wait.h> //waitpid
 #include <taglib/taglib.h>
-#include <unistd.h>       //write, getpid
+#include <unistd.h> //write, getpid
 
 
 

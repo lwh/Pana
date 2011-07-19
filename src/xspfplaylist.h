@@ -1,6 +1,8 @@
-// Author: Mattias Fliesberg (C) Copyright 2006
-// Copyright: See COPYING file that comes with this distribution
-//
+/* 
+ * Author: Mattias Fliesberg (C) Copyright 2006
+ * Copyright (C) 2011 Free Software Foundation, Inc.
+ * License: See top level COPYING file for license
+*/
 
 #ifndef XSPFPlaylist_H
 #define XSPFPlaylist_H

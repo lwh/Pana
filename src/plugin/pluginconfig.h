@@ -1,4 +1,4 @@
-// (c) 2004 Mark Kretschmann <markey@web.de>
+// (C) 2004 Mark Kretschmann <markey@web.de>
 // See COPYING file for licensing information.
 
 #ifndef PANA_PLUGINCONFIG_H
