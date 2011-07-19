@@ -17,5 +17,5 @@ config.status: configure
 	./config.status --recheck
 
 distclean: 
-	rm -rf autom4te.cache config.log config.status configure Makefile autoscan configure.scan config.h config.h.in
+	rm -rf autom4te.cache config.log config.status configure Makefile autoscan configure.scan config.h
 	# for subdirs make distclean
