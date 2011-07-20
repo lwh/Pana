@@ -1,16 +1,35 @@
 # Autoconf file for Pana
 AC_PREREQ([2.66])
 AC_INIT([Pana], [1.5], [pana.bunnies.net])
-AC_CONFIG_FILES([Makefile
-                 src/Makefile])
+AC_CONFIG_AUX_DIR([build-aux])
+AC_CONFIG_MACRO_DIR([m4])
+AM_INIT_AUTOMAKE
+AC_CONFIG_SRCDIR([src/main.cpp])
 AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_FILES([Makefile
+						src/Makefile
+						doc/Makefile
+						doc/da/Makefile
+						po/Makefile])
 
 # Checks for programs.
 AC_PROG_CXX
 AC_PROG_CC
 AC_PROG_MAKE_SET
+AC_PROG_LIBTOOL
+AC_ENABLE_SHARED(yes)
 
-# Checks for libraries.
+# KDE 
+#KDE_SET_PREFIX
+#KDE_PROG_LIBTOOL
+#AM_KDE_WITH_NLS
+#KDE_USE_QT(3.3)
+#AC_PATH_KDE
+#KDE_INIT_DOXYGEN([The API Reference], [Version $VERSION])
+#CXXFLAGS="$CXXFLAGS $KDE_DEFAULT_CXXFLAGS"
+#KDE_CHECK_TYPES
+
+
 
 # Checks for header files.
 AC_PATH_X

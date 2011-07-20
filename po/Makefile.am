@@ -1,0 +1,1 @@
+subdirs = af ar az be bg bn br ca cs cy da de el en_GB eo es et eu fa fi fr ga gl he hi hu id is it ja ka km ko ku lo lt Makefile.am mk ms nb nds ne nl nn pa pl pt pt_BR ro ru rw se sk sl sq sr sr\@Latn ss sv ta tg th tr uk uz uz\@cyrillic zh_CN zh_TW
